@@ -33,6 +33,7 @@ This example will be refined and improved in later modules.
 - [Complete Terraform Guide](https://www.itwonderlab.com/en/terraform-ansible-aws-howto/)
 - [GitHub Repo](https://github.com/itwonderlab/terraform-aws-ec2-rds-basic-free)
 - [Basic AWS Infrastructure Building Blocks](https://www.itwonderlab.com/en/aws-naming-best-practices/)
+- [Installing MySQL on Amazon Linux](https://coderjony.com/blogs/installing-mysql-on-amazon-linux-2-ec2-instance-and-configure-it-for-remote-connections)
 
 ----
 

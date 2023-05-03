@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "region for infrastructure"
   type        = string
-  default = "us-east-1"
+  default     = "us-east-1"
 }
 
 # ------------------------------
@@ -16,7 +16,7 @@ variable "vpc_cidr" {
 variable "vpc_tags" {
   description = "tags for VPC"
   type        = string
-  default = "vpc_wonder_lab"
+  default     = "vpc_wonder_lab"
 }
 
 # ------------------------------
@@ -25,13 +25,13 @@ variable "vpc_tags" {
 variable "pub_sub_cidr" {
   description = "cidr range used for public subnet"
   type        = string
-  default = "172.16.1.0/24"
+  default     = "172.16.1.0/24"
 }
 
 variable "pub_sub_tags" {
   description = "tags for public subnet"
   type        = string
-  default = "public_subnet"
+  default     = "public_subnet"
 }
 
 # ------------------------------
@@ -39,13 +39,13 @@ variable "pub_sub_tags" {
 variable "priv_sub_tags" {
   description = "tags for private subnet"
   type        = string
-  default = "private_subnet"
+  default     = "private_subnet"
 }
 
 variable "priv_sub_cidr" {
   description = "cidr range used for private subnet"
   type        = string
-  default = "172.16.2.0/24"
+  default     = "172.16.2.0/24"
 }
 
 
@@ -54,7 +54,7 @@ variable "priv_sub_cidr" {
 variable "wl_igw_tags" {
   description = "tags for internet gateway"
   type        = string
-  default = "wl_igw"
+  default     = "wl_igw"
 }
 
 
@@ -117,5 +117,17 @@ variable "private_rules" {
 variable "instance_type" {
   description = "type of instance"
   type        = string
-  default = "t3.micro"
+  default     = "t3.micro"
+}
+
+variable "apache_tag" {
+  description = "tags for apache webserver"
+  type        = string
+  default     = "apache_instance"
+}
+
+variable "database_tag" {
+  description = "tags for database webserver"
+  type        = string
+  default     = "database_instance"
 }

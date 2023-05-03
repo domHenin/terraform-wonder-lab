@@ -1,4 +1,5 @@
 # TODO::
+# - add a new ssh keygen specific for 'dell-wsl_key'
 # - create new key pair -- learn  -- check
 # - install db  --> check
 # - start modulizing
@@ -152,7 +153,8 @@ data "aws_ssm_parameter" "ami_id" {
 # Key Pair
 resource "aws_key_pair" "deployer" {
   key_name   = "provision_key"
-  public_key = file("~/.ssh/wonder_lab.pub")
+  # public_key = file("~/.ssh/wonder_lab.pub") # dell-wsl_key
+  public_key= file("~/.ssh/work-wonder_lab.pub") #work-wsl_key
 }
 
 resource "aws_instance" "apache_ws" {
@@ -163,14 +165,22 @@ resource "aws_instance" "apache_ws" {
   associate_public_ip_address = true
   key_name                    = aws_key_pair.deployer.key_name
   user_data                   = fileexists("files/apache_install.sh") ? file("files/apache_install.sh") : null
+
+  tags = {
+    Name = var.apache_tag
+  }
 }
 
 resource "aws_instance" "database_instance" {
-  ami                         = data.aws_ssm_parameter.ami_id.value
-  subnet_id                   = aws_subnet.private_subnet.id
-  instance_type               = var.instance_type
+  ami           = data.aws_ssm_parameter.ami_id.value
+  subnet_id     = aws_subnet.private_subnet.id
+  instance_type = var.instance_type
   # security_groups             = [aws_security_group.private_sg.id]
   associate_public_ip_address = true
   key_name                    = aws_key_pair.deployer.key_name
   user_data                   = fileexists("files/mysql_install.sh") ? file("files/apache_install.sh") : null
+
+  tags = {
+    Name = var.database_tag
+  }
 }
