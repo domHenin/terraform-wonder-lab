@@ -1,14 +1,15 @@
 output "web-server-url" {
   description = "web-server-url"
-  value       = join("", ["http://", aws_instance.apache_ws.public_ip])
+  value = module.compute_base.web-server-url
 }
 
 output "database-server-url" {
   description = "database-server-url"
-  value       = join("", ["http://", aws_instance.database_instance.public_ip])
+  value = module.compute_base.database-server-url
 }
 
 output "Time-Date" {
   description = "Date/Time of Execution"
-  value       = timestamp()
+  value = module.compute_base.time-date
 }
+
