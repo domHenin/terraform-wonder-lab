@@ -6,12 +6,3 @@ variable "aws_region" {
 
 # ------------------------------
 
-module "aws_vpc_module" {
-  source = "./modules/aws/network-base"
-  
-    
-}
-
-
-# ------------------------------
-
