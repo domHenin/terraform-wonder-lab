@@ -9,8 +9,8 @@
 
 output "vpc_id" {
   description = "output vpc id"
-  value = aws_vpc.vpc_wonder_lab.id
-  
+  value       = aws_vpc.vpc_wonder_lab.id
+
 }
 
 output "public_subnet" {
@@ -29,7 +29,7 @@ output "public_security_group" {
   value       = aws_security_group.public_sg.id
 }
 
-# ouptut "private_security_group" {
-#   description = "output private security group"
-#   value       = aws_security_group.private_sg.id
-# }
+output "private_security_group" {
+  description = "output private security group"
+  value       = aws_security_group.private_sg.id
+}
