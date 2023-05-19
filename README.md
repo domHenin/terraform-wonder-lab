@@ -1,4 +1,4 @@
-# Terraform -- Getting a Better Understanding
+# Using Terraform to Create an Environment
 
 ## Overview
 
