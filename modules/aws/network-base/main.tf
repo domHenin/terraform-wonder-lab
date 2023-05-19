@@ -93,7 +93,7 @@ resource "aws_security_group" "public_sg" {
   vpc_id = aws_vpc.vpc_wonder_lab.id
   name   = join("_", ["sg", aws_vpc.vpc_wonder_lab.id])
   dynamic "ingress" {
-    for_each    = var.public_rules
+    for_each = var.public_rules
     content {
       from_port   = ingress.value["port"]
       to_port     = ingress.value["port"]
@@ -139,28 +139,3 @@ resource "aws_security_group" "private_sg" {
     Name = var.private_sg_tag
   }
 }
-
-
-# resource "aws_security_group" "private_sg" {
-#   vpc_id = aws_vpc.vpc_wonder_lab.id
-#   name   = join("_", ["sg", aws_vpc.vpc_wonder_lab.id])
-#   dynamic "ingress" {
-#     for_each = var.private_rules
-#     content {
-#       from_port   = ingress.value["port"]
-#       to_port     = ingress.value["port"]
-#       protocol    = ingress.value["proto"]
-#       cidr_blocks = ingress.value["cidr_blocks"]
-#     }
-#   }
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-
-#   tags = {
-#     "Name" = "sg_private_webserver"
-#   }
-# }
