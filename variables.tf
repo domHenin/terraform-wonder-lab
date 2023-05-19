@@ -1,3 +1,9 @@
+#------------------------------------------------
+# : variables                                   #
+# ./variables.tf                                #
+#------------------------------------------------
+
+
 variable "aws_region" {
   description = "region for infrastructure"
   type        = string
