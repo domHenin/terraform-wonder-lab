@@ -1,6 +1,7 @@
-#-----------------------------------------
-# OUTPUTS:- Network: Configure
-#-----------------------------------------
+#------------------------------------------------
+# network-base: outputs                        #
+# ./modules/aws/network-base/outputs.tf        #
+#------------------------------------------------
 
 # output: subnet_id --- public/private
 # output: security_groups  --- public/private
@@ -33,3 +34,5 @@ output "private_security_group" {
   description = "output private security group"
   value       = aws_security_group.private_sg.id
 }
+
+

@@ -1,3 +1,8 @@
+#------------------------------------------------
+# : ouputs                                       #
+# ./outputs.tf                                    #
+#------------------------------------------------
+
 output "web-server-url" {
   description = "web-server-url"
   value       = module.compute_base.web-server-url
