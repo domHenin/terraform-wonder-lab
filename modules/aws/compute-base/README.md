@@ -11,15 +11,17 @@ currently **public security group** is attached to database. *this was done for 
 -----
 
 ## NeedTo:
-- database: create sg that only allows ssh port
-- databse: verify sql is installed and running
+- database: create sg that only allows ssh port  -- **done: b2826e1 gitpush**
+- database: verify sql is installed and running
+- database: verify ssh connection 
+- apache ws: check user_data
 
 -------
 
 ## `./outputs`
 - web-server-url
 - database-server-url
-- Time-Date
+- time-date
 
 ---------------
 
