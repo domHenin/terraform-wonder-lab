@@ -12,7 +12,7 @@ provider "aws" {
 
 
 module "compute_base" {
-  source = "./modules/aws/instance-base"
+  source = "./modules/aws/compute-base"
 
   network_sub_pub  = module.network_base.sub_pub_id
   network_sub_priv = module.network_base.sub_priv_id
