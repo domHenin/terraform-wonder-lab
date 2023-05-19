@@ -33,7 +33,7 @@ resource "aws_instance" "database_instance" {
   subnet_id     = var.network_sub_priv
   instance_type = var.instance_type
   # security_groups             = [aws_security_group.private_sg.id]
-  security_groups = [var.network_sg]
+  security_groups             = [var.network_sg]
   associate_public_ip_address = true
   key_name                    = aws_key_pair.deployer.key_name
   user_data                   = fileexists("files/mysql_install.sh") ? file("files/apache_install.sh") : null

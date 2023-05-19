@@ -40,8 +40,3 @@ variable "network_sub_priv" {
   default     = ""
 }
 
-# variable "network_sg" {
-#   description = "security group from network-base ref"
-#   type = string
-#   default = ""
-# }
