@@ -93,14 +93,14 @@ variable "public_sg_tag" {
 
 variable "private_sg_name" {
   description = "name of private security group"
-  type = string
-  default = "private security group"
+  type        = string
+  default     = "private security group"
 }
 
 variable "private_sg_description" {
   description = "private security group description"
-  type = string
-  default = "Allow SSH Traffic"
+  type        = string
+  default     = "Allow SSH Traffic"
 }
 
 variable "private_sg_tag" {
