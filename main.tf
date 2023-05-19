@@ -7,20 +7,19 @@ provider "aws" {
 }
 
 
+
 module "compute_base" {
-  source = "./modules/aws/compute-base/"
+  source = "./modules/aws/instance-base"
 
+  network_sub_pub  = module.network_base.sub_pub_id
+  network_sub_priv = module.network_base.sub_priv_id
 
+  network_sg = module.network_base.sg_pub
 
-  public_subnet_id  = module.network_base.public_subnet
-  private_subnet_id = module.network_base.private_subnet
-
-  public_security_group_id  = module.network_base.public_security_group
-  private_security_group_id = module.network_base.private_security_group
 }
+
 
 module "network_base" {
   source = "./modules/aws/network-base"
 }
-
 
