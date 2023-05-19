@@ -11,8 +11,7 @@ output "database-server-url" {
   description = "database-server-url"
   value       = join("", ["http://", aws_instance.database_instance.public_ip])
 }
-
-output "Time-Date" {
+output "time-date" {
   description = "Date/Time of Execution"
   value       = timestamp()
 }

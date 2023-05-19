@@ -74,35 +74,62 @@ variable "public_rules" {
       proto       = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     },
-    {
-      port        = 3689
-      proto       = "tcp"
-      cidr_blocks = ["6.7.8.9/32"]
-    }
+    # {
+    #   port        = 3689
+    #   proto       = "tcp"
+    #   cidr_blocks = ["6.7.8.9/32"]
+    # }
   ]
 }
 
-variable "private_rules" {
-  type = list(object({
-    port        = number
-    proto       = string
-    cidr_blocks = list(string)
-  }))
-  default = [
-    # {
-    #   port        = 80
-    #   proto       = "tcp"
-    #   cidr_blocks = ["0.0.0.0/0"]
-    # },
-    {
-      port        = 22
-      proto       = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-    },
-    #   {
-    #     port        = 3689
-    #     proto       = "tcp"
-    #     cidr_blocks = ["6.7.8.9/32"]
-    #   }
-  ]
+
+variable "public_sg_tag" {
+  description = "public security group tag"
+  type        = string
+  default     = "sg_public_webserver"
 }
+
+
+
+variable "private_sg_name" {
+  description = "name of private security group"
+  type = string
+  default = "private security group"
+}
+
+variable "private_sg_description" {
+  description = "private security group description"
+  type = string
+  default = "Allow SSH Traffic"
+}
+
+variable "private_sg_tag" {
+  description = "private security group tag"
+  type        = string
+  default     = "sg_private_webserver"
+}
+
+# variable "private_rules" {
+#   type = list(object({
+#     port        = number
+#     proto       = string
+#     cidr_blocks = list(string)
+#   }))
+#   default = [
+#     {
+#       port        = 80
+#       proto       = "tcp"
+#       cidr_blocks = ["0.0.0.0/0"]
+#     },
+#     {
+#       port        = 22
+#       proto       = "tcp"
+#       cidr_blocks = ["0.0.0.0/0"]
+#     }
+#     #   {
+#     #     port        = 3689
+#     #     proto       = "tcp"
+#     #     cidr_blocks = ["6.7.8.9/32"]
+#     #   }
+#   ]
+# }
