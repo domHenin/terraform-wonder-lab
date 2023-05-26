@@ -6,7 +6,7 @@
 variable "instance_type" {
   description = "type of instance for build"
   type        = string
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
 
 variable "apache_tag" {
