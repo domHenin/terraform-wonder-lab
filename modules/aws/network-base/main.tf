@@ -51,10 +51,6 @@ resource "aws_route_table" "public_rt" {
     gateway_id = aws_internet_gateway.wl_igw.id
   }
 
-  #   route {
-  #     ipv6_cidr_block        = "::/0"
-  #     egress_only_gateway_id = aws_egress_only_internet_gateway.example.id
-  #   }
 
   tags = {
     Name = "wonder_lab_public_route_table"
@@ -72,11 +68,6 @@ resource "aws_route_table" "private_rt" {
   #   route {
   #     cidr_block = var.priv_sub_cidr
   #     gateway_id = aws_internet_gateway.wl_igw.id
-  #   }
-
-  #   route {
-  #     ipv6_cidr_block        = "::/0"
-  #     egress_only_gateway_id = aws_egress_only_internet_gateway.example.id
   #   }
 
   tags = {
